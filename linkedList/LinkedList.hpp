@@ -39,14 +39,19 @@ bool LinkedList<T>::search(T value) const
 	Node<T>* temp = m_front;
 	bool isFound = false;
 
-	/** TODO 
-		Fix this method
-	*/
+	do {
+		if (temp->getNext() == value) {
+			return(true);
+		}
+		else {
+			temp = temp->getNext();
+		}
+	} while ( temp->getNext() != nullptr );
 
 	return(isFound);
 }
 
-template <typename T>
+template <typename T>		
 std::vector<T> LinkedList<T>::toVector() const
 {
 	std::vector<T> vec;
